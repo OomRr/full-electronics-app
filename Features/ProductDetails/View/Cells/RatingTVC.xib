@@ -39,11 +39,11 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="zhz-tQ-VHy">
                                 <rect key="frame" x="0.0" y="0.0" width="110" height="97"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="1b9-1O-tGt">
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1b9-1O-tGt">
                                         <rect key="frame" x="0.0" y="0.0" width="110" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.8" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ze9-ic-b2k">
-                                                <rect key="frame" x="0.0" y="0.0" width="66" height="40"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="40"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -253,7 +253,7 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="100" id="wZM-EU-5AC"/>
                         </constraints>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="MP5-e1-wpF">
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="MP5-e1-wpF">
                             <size key="itemSize" width="128" height="128"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -271,9 +271,13 @@
                     <constraint firstItem="5aD-PW-VZS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="kko-W2-KYk"/>
                     <constraint firstItem="AFl-tb-W9Z" firstAttribute="top" secondItem="5aD-PW-VZS" secondAttribute="bottom" constant="25" id="mME-7T-hc3"/>
                     <constraint firstAttribute="trailing" secondItem="5aD-PW-VZS" secondAttribute="trailing" constant="16" id="s8Z-CG-X1B"/>
+                    <constraint firstAttribute="bottom" secondItem="AFl-tb-W9Z" secondAttribute="bottom" constant="16" id="x2y-3z-ABC"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="ratingCollectionView" destination="AFl-tb-W9Z" id="xsu-zY-inZ"/>
+            </connections>
             <point key="canvasLocation" x="-125.19083969465649" y="189.78873239436621"/>
         </tableViewCell>
     </objects>
