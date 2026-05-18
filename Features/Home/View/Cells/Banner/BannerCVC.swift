@@ -6,12 +6,19 @@
 //
 
 import UIKit
-
+import SDWebImage
 class BannerCVC: UICollectionViewCell {
 
+    @IBOutlet weak var bannerImg: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
+}
+extension BannerCVC{
+    func configure(with banner: String){
+        
+        bannerImg.sd_setImage(with: URL(string: banner))
+    }
 }

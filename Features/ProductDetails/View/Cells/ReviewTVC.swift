@@ -25,6 +25,7 @@ class ReviewTVC: UITableViewCell {
 }
 extension ReviewTVC{
     func setupCell(){
+        reviewCollectionVIew.showsHorizontalScrollIndicator = false
         reviewCollectionVIew.delegate = self
         reviewCollectionVIew.dataSource = self
         reviewCollectionVIew.register(UINib(nibName: "photosCVC", bundle: nil), forCellWithReuseIdentifier: "photosCVC")
@@ -36,9 +37,15 @@ extension ReviewTVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
         }
         
         func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-            let cell = reviewCollectionVIew.dequeueReusableCell(withReuseIdentifier: "photosCVC", for: indexPath)
+            let cell = reviewCollectionVIew.dequeueReusableCell(withReuseIdentifier: "photosCVC", for: indexPath) as! photosCVC
+      //      cell.picHeight.constant = 40
+          //  cell.pic.frame.height = 0
+          //  cell.contentView.frame.size.height = 0
             return cell
         }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        CGSize(width: 60, height: 60)
+    }
     
 }
 

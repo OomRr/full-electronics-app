@@ -10,9 +10,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeVC" customModule="Full_elcetronics_store" customModuleProvider="target">
             <connections>
+                <outlet property="cartIcon" destination="l1I-G1-AWT" id="GuI-Ay-P3a"/>
                 <outlet property="menuIcon" destination="zwl-XI-Xwv" id="L7A-GK-r2q"/>
                 <outlet property="myHomeTableVIew" destination="GQF-8h-EYE" id="gK5-QF-9h9"/>
-                <outlet property="notificationIcon" destination="l1I-G1-AWT" id="6Ps-3b-QvP"/>
                 <outlet property="searchTF" destination="kUo-ea-F7Q" id="IKI-AX-p1f"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -50,16 +50,16 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SFI-Sm-O9E">
-                                            <rect key="frame" x="319" y="0.0" width="89" height="35"/>
+                                            <rect key="frame" x="314.33333333333331" y="0.0" width="93.666666666666686" height="35"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l1I-G1-AWT">
-                                                    <rect key="frame" x="0.0" y="0.0" width="49" height="35"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="53.666666666666664" height="35"/>
                                                     <color key="tintColor" systemColor="labelColor"/>
                                                     <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" image="bell.fill" catalog="system"/>
+                                                    <buttonConfiguration key="configuration" style="plain" image="cart.fill" catalog="system"/>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zwl-XI-Xwv">
-                                                    <rect key="frame" x="49" y="0.0" width="40" height="35"/>
+                                                    <rect key="frame" x="53.666666666666686" y="0.0" width="40" height="35"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" image="listIcon"/>
                                                 </button>
@@ -94,7 +94,7 @@
         </view>
     </objects>
     <resources>
-        <image name="bell.fill" catalog="system" width="123" height="128"/>
+        <image name="cart.fill" catalog="system" width="128" height="102"/>
         <image name="listIcon" width="16" height="14"/>
         <image name="logoDark" width="25" height="23"/>
         <systemColor name="labelColor">

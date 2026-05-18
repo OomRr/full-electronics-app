@@ -24,6 +24,7 @@ class RatingTVC: UITableViewCell {
 }
 extension RatingTVC{
     func setupCell(){
+        ratingCollectionView.showsHorizontalScrollIndicator = false
         ratingCollectionView.delegate = self
         ratingCollectionView.dataSource = self
         ratingCollectionView.register(UINib(nibName: "photosCVC", bundle: nil), forCellWithReuseIdentifier: "photosCVC")

@@ -69,7 +69,7 @@ class OnBoardingVC: UIViewController {
     
     @IBAction func nextButtonTapped(_ sender: UIButton) {
         if viewModel.isLastPage{
-            //navigate
+            self.navigationController?.pushViewController(HomeVC(viewModel: objs.viewMode), animated: true)
         }else{
             viewModel.currentPage += 1
             myCollectionView.scrollToItem(at: IndexPath(item: viewModel.currentPage, section: 0), at: .centeredHorizontally, animated: true)

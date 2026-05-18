@@ -16,8 +16,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="317" height="138"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner" translatesAutoresizingMaskIntoConstraints="NO" id="dIi-R2-Lki">
-                        <rect key="frame" x="0.0" y="0.0" width="317" height="138"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dIi-R2-Lki">
+                        <rect key="frame" x="10" y="0.0" width="297" height="138"/>
                     </imageView>
                 </subviews>
             </view>
@@ -25,14 +25,14 @@
             <constraints>
                 <constraint firstItem="dIi-R2-Lki" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="CJB-ml-9As"/>
                 <constraint firstAttribute="bottom" secondItem="dIi-R2-Lki" secondAttribute="bottom" id="JPk-Ty-ubO"/>
-                <constraint firstAttribute="trailing" secondItem="dIi-R2-Lki" secondAttribute="trailing" id="Yfe-PD-Xwq"/>
-                <constraint firstItem="dIi-R2-Lki" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="z2a-Df-Wvo"/>
+                <constraint firstAttribute="trailing" secondItem="dIi-R2-Lki" secondAttribute="trailing" constant="10" id="Yfe-PD-Xwq"/>
+                <constraint firstItem="dIi-R2-Lki" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="z2a-Df-Wvo"/>
             </constraints>
             <size key="customSize" width="317" height="138"/>
+            <connections>
+                <outlet property="bannerImg" destination="dIi-R2-Lki" id="opX-5y-GHb"/>
+            </connections>
             <point key="canvasLocation" x="342.74809160305341" y="184.50704225352115"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="banner" width="239" height="125"/>
-    </resources>
 </document>
