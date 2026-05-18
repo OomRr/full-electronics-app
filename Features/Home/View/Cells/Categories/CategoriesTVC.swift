@@ -24,6 +24,7 @@ class CategoriesTVC: UITableViewCell {
 }
 extension CategoriesTVC {
     func setupCollectionView() {
+        myCategoriesCollectionView.showsHorizontalScrollIndicator = false
         myCategoriesCollectionView.delegate = self
         myCategoriesCollectionView.dataSource = self
         myCategoriesCollectionView.register(UINib(nibName: "CategoriesCVC", bundle: nil), forCellWithReuseIdentifier: "CategoriesCVC")

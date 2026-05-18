@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import NDS_Networking
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -17,8 +18,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let _ = (scene as? UIWindowScene) else { return }
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
-     //  let viewModel = OnBoardingViewModel()
-        let VC = ProductDetailsVC2()
+      //  let locator = ServiceLocator.shared
+//        locator.registerLazy {
+//            HomeRepo(network: AlamofireNetwork() )
+//        }
+//        locator.registerLazy {
+//            HomeUseCase(homeRepo: locator.callService() as HomeRepoProtocol)
+//        }
+//        locator.registerLazy {
+//            HomeViewModel(homeUseCase: locator.callService() as HomeUseCaseProtocol)
+//        }
+//        let repo = HomeRepo(network: AlamofireNetwork())
+//        let useCase = HomeUseCase(homeRepo: repo)
+//        let viewModel = HomeViewModel(homeUseCase: useCase)
+       // let onBoardingViewModel = OnBoardingViewModel()
+        //let VC = OnBoardingVC(viewModel: onBoardingViewModel)
+        let VC = CartVC()
+        
+        
         let NC = UINavigationController(rootViewController: VC)
         window.rootViewController = NC
         self.window = window

@@ -9,6 +9,8 @@ import UIKit
 
 class photosCVC: UICollectionViewCell {
 
+   // @IBOutlet weak var picHeight: NSLayoutConstraint!
+    @IBOutlet weak var pic: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

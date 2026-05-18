@@ -54,7 +54,7 @@
                         </constraints>
                     </stackView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FIU-50-vWV">
-                        <rect key="frame" x="16" y="52.000000000000007" width="288" height="84.666666666666686"/>
+                        <rect key="frame" x="16" y="52.000000000000007" width="288" height="109.66666666666669"/>
                         <string key="text">Finally, a good keyboard. Great performance. Fantastic speakers. Massive screen is ideal for heavy editing workflows. Battery life is good during low-intensity workloads, and it changes up quickly.
 Kate Morrison, Mexico</string>
                         <fontDescription key="fontDescription" name="NotoSansSyriac-Regular" family="Noto Sans Syriac" pointSize="13"/>
@@ -62,10 +62,10 @@ Kate Morrison, Mexico</string>
                         <nil key="highlightedColor"/>
                     </label>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="wQK-tQ-uLa">
-                        <rect key="frame" x="16" y="152.66666666666666" width="288" height="65"/>
+                        <rect key="frame" x="16" y="177.66666666666666" width="288" height="40"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="65" id="3pX-eB-gvw"/>
+                            <constraint firstAttribute="height" constant="40" id="3pX-eB-gvw"/>
                         </constraints>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="LKw-QR-NvV">
                             <size key="itemSize" width="128" height="128"/>

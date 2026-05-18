@@ -10,19 +10,35 @@ import UIKit
 class ProductsTVC: UITableViewCell {
 
     @IBOutlet weak var myProductsCollectionView: UICollectionView!
-    let numOfItemsForH: CGFloat = 10 / 2
+    
+    
+    var  onProductSelected: ((Int) -> Void)?
+    
+    
+    
+    var products: ElectronicsModel = []
+    var numOfItemsForH: CGFloat?
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         setupCollectionView()
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
     
+    
+    
+    func configure(products: ElectronicsModel){
+        self.products = products
+        numOfItemsForH = CGFloat((products.count / 2) + 1)
+        myProductsCollectionView.reloadData()
+    }
 }
 
 extension ProductsTVC {
@@ -35,17 +51,22 @@ extension ProductsTVC {
 }
 extension ProductsTVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        10
+        products.count
     }
    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = myProductsCollectionView.dequeueReusableCell(withReuseIdentifier: "ProductsCVC", for: indexPath) as! ProductsCVC
+        cell.configure(homeModel: products[indexPath.row])
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: myProductsCollectionView.frame.width / 2, height: 300)
+        return CGSize(width: 175, height: 250)
     }
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let productId = products[indexPath.row].id{
+        onProductSelected?(productId)
+        }
+    }
     
 }
