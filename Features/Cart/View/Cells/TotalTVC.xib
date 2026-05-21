@@ -109,6 +109,12 @@
                     <constraint firstAttribute="trailing" secondItem="PFc-9l-qB8" secondAttribute="trailing" constant="20" id="uSA-BI-h2n"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="estimatedTotalLabel" destination="uN2-Oo-7oA" id="AzD-3a-4bG"/>
+                <outlet property="shippingLabel" destination="ymj-Bl-OIE" id="BzD-3a-4bG"/>
+                <outlet property="subtotalLabel" destination="JTJ-r2-H5m" id="CzD-3a-4bG"/>
+                <outlet property="taxLabel" destination="b2V-X3-NLc" id="DzD-3a-4bG"/>
+            </connections>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <point key="canvasLocation" x="138.93129770992365" y="201.40845070422537"/>
         </tableViewCell>

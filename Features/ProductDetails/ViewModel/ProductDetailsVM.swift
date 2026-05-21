@@ -36,8 +36,4 @@ class ProductDetailsViewModel: ProductDetailsViewModelType {
             }
         }
     }
-    
-    
-    
-    
 }

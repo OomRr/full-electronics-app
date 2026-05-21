@@ -277,6 +277,8 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="ratingCollectionView" destination="AFl-tb-W9Z" id="xsu-zY-inZ"/>
+                <outlet property="summaryLabel" destination="2Yi-bM-3SM" id="Azu-zY-inZ"/>
+                <outlet property="titleLabel" destination="cla-7P-lYs" id="Bzu-zY-inZ"/>
             </connections>
             <point key="canvasLocation" x="-125.19083969465649" y="189.78873239436621"/>
         </tableViewCell>

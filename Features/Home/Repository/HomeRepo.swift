@@ -25,7 +25,7 @@ public class HomeRepo: Remote, HomeRepoProtocol {
         
         
         
-        let path = "/categories/2/products"
+        let path = "/products"
         
         let parameters: Parameters = [
             "store_code": "ar",

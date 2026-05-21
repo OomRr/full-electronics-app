@@ -6,4 +6,19 @@
 //
 
 import Foundation
-class CategoriesHeader: UIViewFromNib {}
+import UIKit
+class CategoriesHeader: UIViewFromNib {
+    @IBOutlet weak var cat: UILabel!
+   
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setupText()
+    }
+    
+    func setupText(){
+        cat.text = "categories".localized
+        
+    }
+
+    
+}

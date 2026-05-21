@@ -1,0 +1,98 @@
+"onboarding_title1" = "We Provide The Best Electronic Products";
+"onboarding_desc1" = "You will be able to find a wide selection of electronics";
+"onboarding_title2" = "Fast & Secure Delivery";
+"onboarding_desc2" = "Get your products delivered to your door quickly and safely";
+"onboarding_title3" = "Easy Payment";
+"onboarding_desc3" = "Multiple payment options available for your convenience";
+"go" = "Go";
+"brand_name" = "Leuze";
+"more" = "More";
+
+"categories" = "Categories";
+"top_deals" = "Top Deals on Electronics";
+"exchange_offer" = "Exchange Offer & more";
+"search_placeholder" = "Search";
+
+"empty_cart" = "  Empty Cart";
+"continue_shopping" = "Continue Shopping";
+"price_details" = "PRICE DETAILS";
+"subtotal" = "Subtotal";
+"shipping" = "Shipping";
+"tax" = "Tax";
+"estimated_total" = "Estimated Total";
+"delivery_charges" = "Delivery Charges";
+"total_amount" = "Total Amount";
+"free" = "Free";
+"checkout" = "CHECKOUT";
+
+"see_more" = "See More";
+"rating_count" = "( %d Rating )";
+"available_offers" = "Available offers";
+"delivery" = "Delivery";
+"free_delivery" = "Free delivery";
+"delivery_by" = "Delivery by";
+"services" = "Services";
+"replacement_policy" = "7 Days replacement policy";
+"cod_available" = "Cash on Delivery available";
+"ratings_reviews" = "Ratings & Reviews";
+"rating_summary" = "%d ratings and %d reviews";
+"whats_in_box" = "What's in the box";
+"add_to_cart" = "Add to Cart";
+"buy_now" = "Buy Now";
+"similar_products" = "Similar Products";
+
+"settings" = "Settings";
+"favorates" = "Favorates";
+"reports" = "Reports";
+// Categories
+"category_mobile"       = "Mobile & Tech";
+"category_accessories"  = "Accessories";
+"category_computers"    = "Computers";
+"category_gaming"       = "Gaming";
+"category_home"         = "Home Appliances";
+"category_corporate"    = "Corporate Solutions";
+"category_deals"        = "Deals";
+
+// Mobile subcategories
+"sub_smartphones"   = "Smartphones";
+"sub_tablets"       = "Tablets";
+"sub_smartwatch"    = "Smart Watch";
+"sub_simcards"      = "SIM Cards";
+
+// Accessories subcategories
+"sub_headphones"    = "Headphones";
+"sub_chargers"      = "Chargers";
+"sub_cases"         = "Cases";
+"sub_cables"        = "Cables";
+
+// Computers subcategories
+"sub_laptops"           = "Laptops";
+"sub_desktops"          = "Desktops";
+"sub_printers"          = "Printers";
+"sub_storage"           = "Storage";
+"sub_electronic_sol"    = "Electronic Sol...";
+"sub_build_pc"          = "Build Your PC";
+
+// Gaming subcategories
+"sub_consoles"          = "Consoles";
+"sub_controllers"       = "Controllers";
+"sub_gaming_chairs"     = "Gaming Chairs";
+"sub_headsets"          = "Headsets";
+
+// Home subcategories
+"sub_tv"            = "TV";
+"sub_ac"            = "Air Conditioner";
+"sub_washing"       = "Washing Machine";
+"sub_refrigerator"  = "Refrigerator";
+
+// Corporate subcategories
+"sub_servers"       = "Servers";
+"sub_networking"    = "Networking";
+"sub_projectors"    = "Projectors";
+"sub_security"      = "Security";
+
+// Deals subcategories
+"sub_daily_deals"   = "Daily Deals";
+"sub_clearance"     = "Clearance";
+"sub_bundles"       = "Bundles";
+"sub_refurbished"   = "Refurbished";

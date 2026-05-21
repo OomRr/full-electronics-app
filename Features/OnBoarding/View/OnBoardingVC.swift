@@ -60,7 +60,7 @@ class OnBoardingVC: UIViewController {
         if viewModel.isLastPage {
             var config = nextButton.configuration
             config?.image = nil
-            config?.title = "Go"
+            config?.title = "go".localized
             nextButton.configuration = config
             
         }
@@ -69,7 +69,9 @@ class OnBoardingVC: UIViewController {
     
     @IBAction func nextButtonTapped(_ sender: UIButton) {
         if viewModel.isLastPage{
-            self.navigationController?.pushViewController(HomeVC(viewModel: objs.viewMode), animated: true)
+//            self.navigationController?.pushViewController(HomeVC(viewModel: objs.viewMode), animated: true)
+            self.navigationController?.setViewControllers([TabBarViewController()], animated: true)
+            
         }else{
             viewModel.currentPage += 1
             myCollectionView.scrollToItem(at: IndexPath(item: viewModel.currentPage, section: 0), at: .centeredHorizontally, animated: true)

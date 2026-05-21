@@ -10,15 +10,24 @@ import UIKit
 class RatingTVC: UITableViewCell {
 
     @IBOutlet weak var ratingCollectionView: UICollectionView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var summaryLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setupCell()
+        setupText()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func setupText() {
+        titleLabel.text = "ratings_reviews".localized
+        summaryLabel.text = String(format: "rating_summary".localized, 90, 14)
     }
     
 }

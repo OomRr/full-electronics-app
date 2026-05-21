@@ -20,6 +20,15 @@ public class objsPD{
    static let repo = ProductDetailsReop(network: AlamofireNetwork())
     static let usecase = ProductDetailsUsecase(ProductDetailsRepository: repo)
    static let viewMode = ProductDetailsViewModel(PDUseCase: usecase)
- //  static let ProductDetailsViewController = ProductDetailsVC2(viewModel: viewMode )
+
     
 }
+public class objsFav{
+    static let shared = objsFav()
+    static let repo = FavoriteRepo()
+    static  let usecase = FavoriteUseCase(repo: repo)
+    static  let viewMode = FavoriteViewModel()
+
+    
+}
+

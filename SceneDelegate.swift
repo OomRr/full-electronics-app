@@ -18,22 +18,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let _ = (scene as? UIWindowScene) else { return }
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
-      //  let locator = ServiceLocator.shared
-//        locator.registerLazy {
-//            HomeRepo(network: AlamofireNetwork() )
-//        }
-//        locator.registerLazy {
-//            HomeUseCase(homeRepo: locator.callService() as HomeRepoProtocol)
-//        }
-//        locator.registerLazy {
-//            HomeViewModel(homeUseCase: locator.callService() as HomeUseCaseProtocol)
-//        }
-//        let repo = HomeRepo(network: AlamofireNetwork())
-//        let useCase = HomeUseCase(homeRepo: repo)
-//        let viewModel = HomeViewModel(homeUseCase: useCase)
-       // let onBoardingViewModel = OnBoardingViewModel()
-        //let VC = OnBoardingVC(viewModel: onBoardingViewModel)
-        let VC = CartVC()
+    
+        let repo = HomeRepo(network: AlamofireNetwork())
+        let useCase = HomeUseCase(homeRepo: repo)
+        let viewModel = HomeViewModel(homeUseCase: useCase)
+        let onBoardingViewModel = OnBoardingViewModel()
+        let VC = TabBarViewController()
+     //   let VC = OnBoardingVC(viewModel: onBoardingViewModel)
+      //  let cartRepo = CartRepo(network: AlamofireNetwork())
+      //  let getusecase = GetCartUseCase(repository: cartRepo)
+      //  let cartVM = CartViewModel(getCartUsecase: getusecase)
+     //   let VC = CartVC()
         
         
         let NC = UINavigationController(rootViewController: VC)

@@ -12,13 +12,21 @@ class ProductsCVC: UICollectionViewCell {
     @IBOutlet weak var price: UILabel!
     @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var productImg: UIImageView!
+    @IBOutlet weak var exchangeOfferLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         self.clipsToBounds = true
         self.contentView.clipsToBounds = true
         self.layer.cornerRadius = 8
+        setupText()
     }
+    
+    func setupText() {
+        exchangeOfferLabel.text = "exchange_offer".localized
+    }
+    
     func configure(homeModel: ElectronicsModelElement){
         self.price.text = "\(homeModel.price ?? 0) EGP"
         self.productName.text = homeModel.title
