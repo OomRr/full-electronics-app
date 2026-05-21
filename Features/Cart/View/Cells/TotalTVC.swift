@@ -9,15 +9,24 @@ import UIKit
 
 class TotalTVC: UITableViewCell {
 
+    @IBOutlet weak var subtotalLabel: UILabel!
+    @IBOutlet weak var shippingLabel: UILabel!
+    @IBOutlet weak var taxLabel: UILabel!
+    @IBOutlet weak var estimatedTotalLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        setupText()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
+    func setupText() {
+        subtotalLabel.text = "subtotal".localized
+        shippingLabel.text = "shipping".localized
+        taxLabel.text = "tax".localized
+        estimatedTotalLabel.text = "estimated_total".localized
+    }
 }

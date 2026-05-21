@@ -134,6 +134,7 @@ Bluetooth Headset</string>
             </constraints>
             <size key="customSize" width="225" height="257"/>
             <connections>
+                <outlet property="exchangeOfferLabel" destination="iRi-cO-9eF" id="Nsu-zY-inZ"/>
                 <outlet property="price" destination="l1z-qd-NN4" id="Del-ig-99z"/>
                 <outlet property="productImg" destination="cHN-HR-hNX" id="J0r-47-O2i"/>
                 <outlet property="productName" destination="Hc8-BI-Jti" id="dJX-Uu-5ew"/>

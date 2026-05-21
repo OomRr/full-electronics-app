@@ -6,4 +6,18 @@
 //
 
 import Foundation
-class ProductsHeader: UIViewFromNib{}
+import UIKit
+class ProductsHeader: UIViewFromNib{
+    @IBOutlet weak var titleLabel: UILabel!
+   
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setupText()
+    }
+    
+    func setupText(){
+        
+        titleLabel.text = "top_deals".localized
+      
+    }
+}

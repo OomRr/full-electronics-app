@@ -1,0 +1,98 @@
+"onboarding_title1" = "نحن نقدم أفضل المنتجات الإلكترونية";
+"onboarding_desc1" = "ستتمكن من العثور على مجموعة واسعة من الإلكترونيات";
+"onboarding_title2" = "توصيل سريع وآمن";
+"onboarding_desc2" = "احصل على منتجاتك حتى باب منزلك بسرعة وأمان";
+"onboarding_title3" = "دفع سهل";
+"onboarding_desc3" = "خيارات دفع متعددة متاحة لراحتك";
+"go" = "انطلق";
+"brand_name" = "لوزي";
+"more" = "المزيد";
+
+"categories" = "الفئات";
+"top_deals" = "أفضل العروض على الإلكترونيات";
+"exchange_offer" = "عرض الاستبدال وأكثر";
+"search_placeholder" = "بحث";
+
+"empty_cart" = "  إفراغ العربة";
+"continue_shopping" = "مواصلة التسوق";
+"price_details" = "تفاصيل السعر";
+"subtotal" = "المجموع الفرعي";
+"shipping" = "الشحن";
+"tax" = "الضريبة";
+"estimated_total" = "المجموع المقدر";
+"delivery_charges" = "رسوم التوصيل";
+"total_amount" = "المبلغ الإجمالي";
+"free" = "مجاني";
+"checkout" = "الدفع";
+
+"see_more" = "عرض المزيد";
+"rating_count" = "( %d تقييم )";
+"available_offers" = "العروض المتاحة";
+"delivery" = "التوصيل";
+"free_delivery" = "توصيل مجاني";
+"delivery_by" = "التوصيل بواسطة";
+"services" = "الخدمات";
+"replacement_policy" = "سياسة استبدال لمدة 7 أيام";
+"cod_available" = "الدفع عند الاستلام متاح";
+"ratings_reviews" = "التقييمات والمراجعات";
+"rating_summary" = "%d تقييمات و %d مراجعات";
+"whats_in_box" = "ماذا يوجد في الصندوق";
+"add_to_cart" = "إضافة إلى العربة";
+"buy_now" = "اشتري الآن";
+"similar_products" = "منتجات مشابهة";
+
+"settings" = "الإعدادات";
+"favorates" = "المفضلة";
+"reports" = "التقارير";
+// Categories
+"category_mobile"       = "موبايل وتكنولوجيا";
+"category_accessories"  = "إكسسوارات";
+"category_computers"    = "كمبيوترات";
+"category_gaming"       = "جيمينج";
+"category_home"         = "أجهزة منزلية";
+"category_corporate"    = "حلول الشركات";
+"category_deals"        = "عروض";
+
+// Mobile subcategories
+"sub_smartphones"   = "هواتف ذكية";
+"sub_tablets"       = "تابلت";
+"sub_smartwatch"    = "ساعات ذكية";
+"sub_simcards"      = "شرائح SIM";
+
+// Accessories subcategories
+"sub_headphones"    = "سماعات";
+"sub_chargers"      = "شواحن";
+"sub_cases"         = "كفرات";
+"sub_cables"        = "كابلات";
+
+// Computers subcategories
+"sub_laptops"           = "لاب توب";
+"sub_desktops"          = "كمبيوتر مكتبي";
+"sub_printers"          = "طابعات";
+"sub_storage"           = "تخزين";
+"sub_electronic_sol"    = "حلول إلكترونية";
+"sub_build_pc"          = "ابنِ جهازك";
+
+// Gaming subcategories
+"sub_consoles"          = "أجهزة ألعاب";
+"sub_controllers"       = "أذرع تحكم";
+"sub_gaming_chairs"     = "كراسي جيمينج";
+"sub_headsets"          = "سماعات جيمينج";
+
+// Home subcategories
+"sub_tv"            = "تلفزيون";
+"sub_ac"            = "تكييف";
+"sub_washing"       = "غسالة";
+"sub_refrigerator"  = "ثلاجة";
+
+// Corporate subcategories
+"sub_servers"       = "سيرفرات";
+"sub_networking"    = "شبكات";
+"sub_projectors"    = "بروجيكتورات";
+"sub_security"      = "أنظمة أمان";
+
+// Deals subcategories
+"sub_daily_deals"   = "عروض يومية";
+"sub_clearance"     = "تصفية مخزون";
+"sub_bundles"       = "باقات";
+"sub_refurbished"   = "مجدد";
