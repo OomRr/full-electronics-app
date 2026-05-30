@@ -7,8 +7,11 @@
 
 import UIKit
 import SDWebImage
-class ProductsCVC: UICollectionViewCell {
+import SkeletonView
 
+class ProductsCVC: UICollectionViewCell, IdentifiableView {
+
+    @IBOutlet weak var rateView: UIView!
     @IBOutlet weak var price: UILabel!
     @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var productImg: UIImageView!
@@ -16,15 +19,19 @@ class ProductsCVC: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        self.isSkeletonable = true
         self.clipsToBounds = true
         self.contentView.clipsToBounds = true
         self.layer.cornerRadius = 8
+        self.layer.borderWidth = 0.2
         setupText()
+        rateView.layer.cornerRadius = 8
     }
     
     func setupText() {
         exchangeOfferLabel.text = "exchange_offer".localized
+       
     }
     
     func configure(homeModel: ElectronicsModelElement){

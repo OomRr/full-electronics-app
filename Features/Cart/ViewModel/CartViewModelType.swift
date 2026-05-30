@@ -8,12 +8,18 @@
 import Foundation
 
 protocol CartViewModelInput{
-    func getCartData(userId: Int)
+    func loadCart()
+    func addToCart(product: CartEntity)
+    func removeItem(productId: Int)
+    func clearCart()
+    func updateQuantity(productId: Int, quantity: Int)
+
 }
 protocol CartViewModelOutput{
     var onStateChange: ((CartiewState) -> Void)? { get set }
     var CartEntity: CartEntity? {get set}
-
+    
+  
 }
 
 enum CartiewState {

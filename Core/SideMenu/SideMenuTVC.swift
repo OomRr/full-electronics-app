@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SideMenuTVC: UITableViewCell {
+class SideMenuTVC: UITableViewCell,IdentifiableView {
 
     @IBOutlet weak var menuLabel: UILabel!
     @IBOutlet weak var menuImg: UIImageView!

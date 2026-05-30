@@ -7,17 +7,27 @@
 
 import UIKit
 
-class RatingTVC: UITableViewCell {
+class RatingTVC: UITableViewCell, IdentifiableView {
 
     @IBOutlet weak var ratingCollectionView: UICollectionView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var summaryLabel: UILabel!
+    
+    var imgsStrings: [String] = []
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
         setupCell()
         setupText()
     }
+    
+    func configure(with imgs: [String]){
+        self.imgsStrings = imgs
+        self.ratingCollectionView.reloadData()
+        
+    }
+    
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -36,16 +46,17 @@ extension RatingTVC{
         ratingCollectionView.showsHorizontalScrollIndicator = false
         ratingCollectionView.delegate = self
         ratingCollectionView.dataSource = self
-        ratingCollectionView.register(UINib(nibName: "photosCVC", bundle: nil), forCellWithReuseIdentifier: "photosCVC")
+        ratingCollectionView.register(photosCVC.self)
     }
 }
 extension RatingTVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return imgsStrings.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = ratingCollectionView.dequeueReusableCell(withReuseIdentifier: "photosCVC", for: indexPath)
+        let cell: photosCVC = ratingCollectionView.dequeueReusableCell(for: indexPath)
+        cell.configure(with: imgsStrings[indexPath.row])
         return cell
     }
 }

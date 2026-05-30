@@ -15,14 +15,14 @@ class TabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTabBarItems()
-        // Do any additional setup after loading the view.
+        tabBar.tintColor = .systemOrange
     }
     func setupTabBarItems() {
         //حطيت كل UIViewController جوا UINavigationController واديته قيم لل tabBar image and title
-        let vc1 = UINavigationController(rootViewController: HomeVC(viewModel: objs.viewMode))
+        let vc1 = UINavigationController(rootViewController: HomeVC(viewModel: objs.shared.viewMode))
         let vc2 = UINavigationController(rootViewController: CatigoriesVC())
         let vc3 = UINavigationController(rootViewController: SettingsVC())
-        let vc4 = UINavigationController(rootViewController: CartVC())
+        let vc4 = UINavigationController(rootViewController: FavoratesVC())
      
       
         
@@ -32,10 +32,8 @@ class TabBarViewController: UITabBarController {
         vc2.tabBarItem.title = "Catigories"
         vc3.tabBarItem.image = UIImage(systemName: "gear")
         vc3.tabBarItem.title = "Settings"
-        vc4.tabBarItem.image = UIImage(systemName: "cart")
-        vc4.tabBarItem.title = "Cart"
-        
-        
+        vc4.tabBarItem.image = UIImage(systemName: "heart.fill")
+        vc4.tabBarItem.title = "Favorites"
         
         //هنا ببعت باه ال UINavigationControllers لل MainTabBarViewController بتاعي عادي
         //ال setViewControllers دي تبع UITabBarController

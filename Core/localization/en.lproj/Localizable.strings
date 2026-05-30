@@ -9,8 +9,8 @@
 "more" = "More";
 
 "categories" = "Categories";
-"top_deals" = "Top Deals on Electronics";
-"exchange_offer" = "Exchange Offer & more";
+"top_deals" = "Top Deals on Products";
+"exchange_offer" = "Exchange Offer";
 "search_placeholder" = "Search";
 
 "empty_cart" = "  Empty Cart";
@@ -24,7 +24,16 @@
 "total_amount" = "Total Amount";
 "free" = "Free";
 "checkout" = "CHECKOUT";
+"subtotal" = "Subtotal";
+"quantity" = "quantity";
+"remove_item" = "Remove Item";
 
+
+
+
+"offer1" = "5% Unlimited Cashback on Flipkart Axis Bank Credit Card";
+"offer2" = "Flat 150 EGP off on CIB Credit Card on orders above 1000 EGP";
+"offer3" = "Exchange your old item and get up to 500 EGP off";
 "see_more" = "See More";
 "rating_count" = "( %d Rating )";
 "available_offers" = "Available offers";
@@ -41,8 +50,9 @@
 "buy_now" = "Buy Now";
 "similar_products" = "Similar Products";
 
+
 "settings" = "Settings";
-"favorates" = "Favorates";
+"favorites" = "Favorites";
 "reports" = "Reports";
 // Categories
 "category_mobile"       = "Mobile & Tech";
@@ -96,3 +106,10 @@
 "sub_clearance"     = "Clearance";
 "sub_bundles"       = "Bundles";
 "sub_refurbished"   = "Refurbished";
+
+
+
+//Toast
+"item_added_to_cart" = "Added To Cart Successfully!";
+"added_to_favorites" = "Added To Favorites!";
+"removed_from_favorites" = "Removed From Favorites!";

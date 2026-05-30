@@ -9,8 +9,8 @@
 "more" = "المزيد";
 
 "categories" = "الفئات";
-"top_deals" = "أفضل العروض على الإلكترونيات";
-"exchange_offer" = "عرض الاستبدال وأكثر";
+"top_deals" = "أفضل العروض على المنتجات ";
+"exchange_offer" = "عرض الاستبدال";
 "search_placeholder" = "بحث";
 
 "empty_cart" = "  إفراغ العربة";
@@ -24,7 +24,14 @@
 "total_amount" = "المبلغ الإجمالي";
 "free" = "مجاني";
 "checkout" = "الدفع";
+"subtotal" = "المجوع الفرعي";
+"quantity" = "الكمية";
+"remove_item" = "حذف المنتج ";
 
+
+"offer1" = "استرداد نقدي غير محدود بنسبة 5% ببطاقة Axis Bank الائتمانية";
+"offer2" = "خصم ثابت 150 جنيه على بطاقات CIB الائتمانية للطلبات فوق 1000 جنيه";
+"offer3" = "استبدل منتجك القديم واحصل على خصم يصل إلى 500 جنيه";
 "see_more" = "عرض المزيد";
 "rating_count" = "( %d تقييم )";
 "available_offers" = "العروض المتاحة";
@@ -35,14 +42,14 @@
 "replacement_policy" = "سياسة استبدال لمدة 7 أيام";
 "cod_available" = "الدفع عند الاستلام متاح";
 "ratings_reviews" = "التقييمات والمراجعات";
-"rating_summary" = "%d تقييمات و %d مراجعات";
+"rating_summary" = "%d تقييم و 1 مراجعة";
 "whats_in_box" = "ماذا يوجد في الصندوق";
 "add_to_cart" = "إضافة إلى العربة";
 "buy_now" = "اشتري الآن";
 "similar_products" = "منتجات مشابهة";
 
 "settings" = "الإعدادات";
-"favorates" = "المفضلة";
+"favorites" = "المفضلة";
 "reports" = "التقارير";
 // Categories
 "category_mobile"       = "موبايل وتكنولوجيا";
@@ -96,3 +103,8 @@
 "sub_clearance"     = "تصفية مخزون";
 "sub_bundles"       = "باقات";
 "sub_refurbished"   = "مجدد";
+
+//Toast
+"item_added_to_cart" = "تم اضافة المنتج للسلة بنجاح ";
+"added_to_favorites" = " تم اضافة المنتج للمفضلة";
+"removed_from_favorites" = "حذف المنتج من المفضلة";

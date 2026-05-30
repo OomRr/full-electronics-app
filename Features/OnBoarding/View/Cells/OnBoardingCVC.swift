@@ -7,7 +7,7 @@
 
 import UIKit
 
-class OnBoardingCVC: UICollectionViewCell {
+class OnBoardingCVC: UICollectionViewCell, IdentifiableView {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var details: UILabel!
     override func awakeFromNib() {

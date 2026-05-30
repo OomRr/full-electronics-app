@@ -13,22 +13,20 @@ class FavoratesVC: UIViewController {
     var favsModeld: [FavoriteEntity] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Favorates"
-        
-        print("///////////////////////////////////////////")
-   //   favsModeld = objsFav.viewMode.favorites
+        title = "Favorites".localized
         setupTableView()
-        // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        objsFav.viewMode.loadFavorites()
-        favsModeld = objsFav.viewMode.favorites
+        
+        objsFav.shared.viewMode.loadFavorites()
+        favsModeld = objsFav.shared.viewMode.favorites
+        favTableView.reloadData()
     }
     
     func setupTableView(){
-        objsFav.viewMode.loadFavorites()
-        favTableView.register(UINib(nibName: "FavoratesTVC", bundle: nil), forCellReuseIdentifier: "FavoratesTVC")
+        objsFav.shared.viewMode.loadFavorites()
+        favTableView.register(FavoratesTVC.self)
         favTableView.delegate = self
         favTableView.dataSource = self
     }
@@ -40,12 +38,23 @@ extension FavoratesVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = favTableView.dequeueReusableCell(withIdentifier: "FavoratesTVC",for: indexPath) as! FavoratesTVC
-        assert(favsModeld.count != 0 ,"the favorites is empty")
-        print(favsModeld)
-        cell.configure(name: favsModeld[indexPath.row].productName, price: favsModeld[indexPath.row].price, img: favsModeld[indexPath.row].productImage)
+        let cell: FavoratesTVC = favTableView.dequeueReusableCell(for: indexPath)
+       
+        let fav = favsModeld[indexPath.row]
+     
+        cell.configure(name: fav.productName, price: fav.price, img: fav.productImage)
+        cell.onRemove = { [weak self] in
+            var vm = objsFav.shared.viewMode
+            
+            vm.removeFavorite(productId: fav.productId)
+            vm.loadFavorites()
+            self?.favsModeld = vm.favorites
+            self?.favTableView.reloadData()
+        }
         return cell
     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
     
 }

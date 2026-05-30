@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CategoriesTVC: UITableViewCell {
+class CategoriesTVC: UITableViewCell, IdentifiableView {
 
     @IBOutlet weak var myCategoriesCollectionView: UICollectionView!
     override func awakeFromNib() {

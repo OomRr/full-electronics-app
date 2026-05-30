@@ -74,13 +74,13 @@ extension CatigoriesVC{
    func setupTableView(){
         catTableView.dataSource = self
         catTableView.delegate = self
-        catTableView.register(UINib(nibName: "CatigoriesTVC", bundle: nil), forCellReuseIdentifier: "CatigoriesTVC")
+       catTableView.register(CatigoriesTVC.self)
     }
     
    func setupCollectionView(){
         catCollectionVIew.dataSource = self
         catCollectionVIew.delegate = self
-        catCollectionVIew.register(UINib(nibName: "CatigoriesCVC", bundle: nil), forCellWithReuseIdentifier: "CatigoriesCVC")
+       catCollectionVIew.register(CatigoriesCVC.self)
     }
     
 }
@@ -92,7 +92,7 @@ extension CatigoriesVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = catTableView.dequeueReusableCell(withIdentifier: "CatigoriesTVC", for: indexPath) as! CatigoriesTVC
+        let cell: CatigoriesTVC = catTableView.dequeueReusableCell(for: indexPath)
         let item = categories[indexPath.row]
         cell.configure(name: item.name, icon: item.icon)
         return cell
@@ -103,6 +103,7 @@ extension CatigoriesVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     
+    
 }
 extension CatigoriesVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -111,7 +112,7 @@ extension CatigoriesVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = catCollectionVIew.dequeueReusableCell(withReuseIdentifier: "CatigoriesCVC", for: indexPath) as! CatigoriesCVC
+        let cell: CatigoriesCVC = catCollectionVIew.dequeueReusableCell( for: indexPath) 
         let item = currentSubcategories[indexPath.row]
         cell.configure(name: item.name, img: item.image)
         return cell
@@ -121,6 +122,7 @@ extension CatigoriesVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
         CGSize(width: (catCollectionVIew.frame.width - 24)/2,
                height: (catCollectionVIew.frame.width - 24)/2)
     }
+    
     func tableView(_ tableView: UITableView,
                    didSelectRowAt indexPath: IndexPath) {
         let selected = categories[indexPath.row]

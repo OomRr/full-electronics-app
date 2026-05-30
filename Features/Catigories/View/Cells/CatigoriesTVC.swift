@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CatigoriesTVC: UITableViewCell {
+class CatigoriesTVC: UITableViewCell, IdentifiableView {
     @IBOutlet weak var catImg: UIImageView!
     @IBOutlet weak var catName: UILabel!
     

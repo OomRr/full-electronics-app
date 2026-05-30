@@ -10,47 +10,56 @@ import SDWebImage
 
 class ProductDetailsVC2: UIViewController {
     
+//MARK: -IBOutlets
+    
+    @IBOutlet weak var rateView: UIStackView!
     @IBOutlet weak var favBtn: UIButton!
     @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var titlee: UILabel!
     @IBOutlet weak var price: UILabel!
-    @IBOutlet weak var seeMoreBtn: UIButton!
     @IBOutlet weak var ratingCountLabel: UILabel!
     @IBOutlet weak var availableOffersLabel: UILabel!
     @IBOutlet weak var freeDeliveryBtn: UIButton!
     @IBOutlet weak var productExchangeBtn: UIButton!
     @IBOutlet weak var addToCartBtn: UIButton!
-    @IBOutlet weak var buyNowBtn: UIButton!
-    @IBOutlet weak var similarProductsLabel: UILabel!
+
+    @IBOutlet weak var offer3: UILabel!
+    @IBOutlet weak var offer2: UILabel!
+    @IBOutlet weak var offer1: UILabel!
     
- 
-    var productId: Int = 0
-    let numbOfRows: Int = 2
-    let viewModel: ProductDetailsViewModel
-    let FavViewModel: FavoriteViewModel
-    
-    let CartViewModel2: CartViewModel2
     @IBOutlet weak var heightOfTable: NSLayoutConstraint!
     @IBOutlet weak var RAndRtableView: UITableView!
-    override func viewDidLoad() {
+
+    
+ //MARK: - Properties
+    var productId: Int = 0
+    let numbOfRows: Int = 2
+    
+    let viewModel: ProductDetailsViewModel
+    let FavViewModel: FavoriteViewModel
+    let CartViewModel2: CartViewModel2
+    
+      override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupCell()
         setupText()
         viewModel.getPorductData(id: productId )
-        
-        updateFavIcon()
-       // updateFavIcon()
-
         bindViewModel()
+        rateView.layer.cornerRadius = 8
        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         updateFavIcon()
+        img.clipsToBounds = true
+        img.layer.cornerRadius = 20
+       
     }
     
+    //MARK: - inits
     
-    init(id: Int, viewModel: ProductDetailsViewModel, cartVM: CartViewModel2, favViewModel: FavoriteViewModel = objsFav.viewMode) {
+    init(id: Int, viewModel: ProductDetailsViewModel, cartVM: CartViewModel2, favViewModel: FavoriteViewModel = objsFav.shared.viewMode) {
         self.viewModel = viewModel
         self.FavViewModel = favViewModel
         self.productId = id
@@ -63,23 +72,20 @@ class ProductDetailsVC2: UIViewController {
     }
     
     
+    //MARK: - setup methods
     
     func setupFavIcon(){
         favBtn.setImage(UIImage(systemName: "heart.fill"), for: .selected)
     }
     
- 
-    
     func setupText() {
-        seeMoreBtn.setTitle("see_more".localized, for: .normal)
+        offer1.text = "offer1".localized
+        offer2.text = "offer2".localized
+        offer3.text = "offer3".localized
         availableOffersLabel.text = "available_offers".localized
         freeDeliveryBtn.setTitle("free_delivery".localized, for: .normal)
         productExchangeBtn.setTitle("exchange_offer".localized, for: .normal)
         addToCartBtn.setTitle("add_to_cart".localized, for: .normal)
-        buyNowBtn.setTitle("buy_now".localized, for: .normal)
-        similarProductsLabel.text = "similar_products".localized
-        
-        // Example for dynamic string
         ratingCountLabel.text = String(format: "rating_count".localized, 90)
     }
     
@@ -108,15 +114,16 @@ class ProductDetailsVC2: UIViewController {
        // var y =  viewModel.PDModel?[0].title
         img.sd_setImage(with: URL(string: viewModel.PDModel?.images?[0] ?? ""))
         titlee.text = viewModel.PDModel?.title
-        price.text = "\(viewModel.PDModel?.price ?? 0)"
+        price.text = "\(viewModel.PDModel?.price ?? 0) EGP"
+        
     }
     func updateFavIcon() {
-        let state = objsFav.viewMode.isFavorite(productId: productId)
+        let state = objsFav.shared.viewMode.isFavorite(productId: productId)
         
-       
+        
         let icon = state ? "heart.fill" : "heart"
         favBtn.setImage(UIImage(systemName: icon), for: .normal)
-        favBtn.tintColor = state ? .red : .gray
+        favBtn.tintColor = state ? .systemRed : .gray
         
         
     }
@@ -126,7 +133,7 @@ class ProductDetailsVC2: UIViewController {
         let vm = viewModel.PDModel
         CartViewModel2.addToCart(product: CartEntity(productId: vm?.id ?? 0, productName: vm?.title ?? "", productImage: vm?.images?[0] ?? "", price: Double(vm?.price ?? 0), quantity: 1))
         CartViewModel2.loadCart()
-      
+        Toast.showToast(message: "item_added_to_cart".localized, in: self)
         
         
     }
@@ -139,18 +146,27 @@ class ProductDetailsVC2: UIViewController {
             productName: data.title ?? "",
             productImage: data.images?.first ?? "",
             price: Double(data.price ?? 0)
+            
         )
         
-        objsFav.viewMode.toggleFavorite(product: proIntity)
+        objsFav.shared.viewMode.toggleFavorite(product: proIntity)
+        
         updateFavIcon()
+        let state = objsFav.shared.viewMode.isFavorite(productId: productId)
+        switch state {
+            case true:
+            Toast.showToast(message: "added_to_favorites".localized, in: self)
+        case false:
+            Toast.showToast(message: "removed_from_favorites".localized, in: self)
+        }
     }
 }
 extension ProductDetailsVC2{
     func setupCell(){
-        heightOfTable.constant = CGFloat(numbOfRows) * 300
+        heightOfTable.constant = CGFloat(numbOfRows) * 270
         
-        RAndRtableView.register(UINib(nibName: "RatingTVC", bundle: nil), forCellReuseIdentifier: "RatingTVC")
-        RAndRtableView.register(UINib(nibName: "ReviewTVC", bundle: nil), forCellReuseIdentifier: "ReviewTVC")
+        RAndRtableView.register(RatingTVC.self)
+        RAndRtableView.register(ReviewTVC.self)
         RAndRtableView.dataSource = self
         RAndRtableView.delegate = self
         RAndRtableView.showsHorizontalScrollIndicator = false
@@ -164,11 +180,11 @@ extension ProductDetailsVC2: UITableViewDelegate, UITableViewDataSource{
    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
-            let cell = RAndRtableView.dequeueReusableCell(withIdentifier: "RatingTVC", for: indexPath)
-            print(cell.contentView)
+            let cell: RatingTVC = RAndRtableView.dequeueReusableCell(for: indexPath)
+            cell.configure(with: viewModel.PDModel?.images ?? [])
             return cell
         } else if indexPath.row == 1 {
-            let cell = RAndRtableView.dequeueReusableCell(withIdentifier: "ReviewTVC", for: indexPath)
+            let cell: ReviewTVC = RAndRtableView.dequeueReusableCell(for: indexPath)
             return cell
         }
         return UITableViewCell()
@@ -176,3 +192,4 @@ extension ProductDetailsVC2: UITableViewDelegate, UITableViewDataSource{
     
     
 }
+

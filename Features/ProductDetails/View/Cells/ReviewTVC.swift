@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ReviewTVC: UITableViewCell {
+class ReviewTVC: UITableViewCell,IdentifiableView {
 
     @IBOutlet weak var reviewCollectionVIew: UICollectionView!
     override func awakeFromNib() {
@@ -28,7 +28,8 @@ extension ReviewTVC{
         reviewCollectionVIew.showsHorizontalScrollIndicator = false
         reviewCollectionVIew.delegate = self
         reviewCollectionVIew.dataSource = self
-        reviewCollectionVIew.register(UINib(nibName: "photosCVC", bundle: nil), forCellWithReuseIdentifier: "photosCVC")
+        reviewCollectionVIew.register(photosCVC.self)
+       
     }
 }
 extension ReviewTVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -37,15 +38,13 @@ extension ReviewTVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
         }
         
         func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-            let cell = reviewCollectionVIew.dequeueReusableCell(withReuseIdentifier: "photosCVC", for: indexPath) as! photosCVC
-      //      cell.picHeight.constant = 40
-          //  cell.pic.frame.height = 0
-          //  cell.contentView.frame.size.height = 0
+            let cell: photosCVC = reviewCollectionVIew.dequeueReusableCell( for: indexPath)
             return cell
         }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: 60, height: 60)
+        CGSize(width: 60, height: 0)
     }
+    
     
 }
 
