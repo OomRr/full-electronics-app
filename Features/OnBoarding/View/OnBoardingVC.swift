@@ -46,7 +46,7 @@ class OnBoardingVC: UIViewController {
     func setupCollectionView(){
         myCollectionView.delegate = self
         myCollectionView.dataSource = self
-        myCollectionView.register(UINib(nibName: "OnBoardingCVC", bundle: nil), forCellWithReuseIdentifier: "OnBoardingCVC")
+        myCollectionView.register(OnBoardingCVC.self)
         myCollectionView.isPagingEnabled = true
         myCollectionView.showsHorizontalScrollIndicator = false
         
@@ -88,7 +88,7 @@ extension OnBoardingVC: UICollectionViewDelegate,UICollectionViewDataSource, UIC
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = myCollectionView.dequeueReusableCell(withReuseIdentifier: "OnBoardingCVC", for: indexPath) as! OnBoardingCVC
+        let cell: OnBoardingCVC = myCollectionView.dequeueReusableCell(for: indexPath) 
         cell.configure(with: viewModel.page(at: indexPath.item))
         return cell
     }

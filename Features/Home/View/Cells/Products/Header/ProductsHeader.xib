@@ -10,59 +10,30 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductsHeader" customModule="Full_elcetronics_store" customModuleProvider="target">
             <connections>
-                <outlet property="titleLabel" destination="9EJ-9f-U16" id="YzD-2a-3bG"/>
+                <outlet property="titleLabel" destination="qhT-J0-B9y" id="iVe-iJ-plM"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="429" height="54"/>
+            <rect key="frame" x="0.0" y="0.0" width="393" height="138"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="VtS-Y6-YEO">
-                    <rect key="frame" x="63.333333333333343" y="4.6666666666666679" width="302.66666666666663" height="45"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top Deals on Electronics" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9EJ-9f-U16">
-                            <rect key="frame" x="0.0" y="0.0" width="198.66666666666666" height="45"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="45" id="5dy-hq-cRL"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rzY-hq-ZZh">
-                            <rect key="frame" x="248.66666666666663" y="0.0" width="54" height="45"/>
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5gM-aD-SBX">
-                                    <rect key="frame" x="0.0" y="0.0" width="24" height="45"/>
-                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <buttonConfiguration key="configuration" style="plain"/>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S18-SF-yQV">
-                                    <rect key="frame" x="24" y="0.0" width="30" height="45"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="30" id="Uig-bc-5xl"/>
-                                    </constraints>
-                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain"/>
-                                </button>
-                            </subviews>
-                        </stackView>
-                    </subviews>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="45" id="fzf-jL-Raq"/>
-                    </constraints>
-                </stackView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top Deals on Electronics" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qhT-J0-B9y">
+                    <rect key="frame" x="0.0" y="58.666666666666657" width="393" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="VtS-Y6-YEO" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="KXt-rx-io1"/>
-                <constraint firstItem="VtS-Y6-YEO" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="aHT-ZN-deE"/>
+                <constraint firstItem="qhT-J0-B9y" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="4O7-TW-oNd"/>
+                <constraint firstItem="qhT-J0-B9y" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="W0m-U6-rog"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="qhT-J0-B9y" secondAttribute="trailing" id="i0d-q3-WDJ"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="31.297709923664122" y="371.83098591549299"/>
+            <point key="canvasLocation" x="-60.305343511450381" y="259.15492957746483"/>
         </view>
     </objects>
     <resources>

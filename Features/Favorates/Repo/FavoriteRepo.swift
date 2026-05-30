@@ -8,6 +8,7 @@
 import CoreData
 
 public protocol FavoriteRepoProtocol {
+    
     func getFavorites() -> [FavoriteEntity]
     func addFavorite(product: FavoriteEntity)
     func removeFavorite(productId: Int)
@@ -17,7 +18,9 @@ public protocol FavoriteRepoProtocol {
 public class FavoriteRepo: FavoriteRepoProtocol {
     
     private let context = CoreDataManager.shared.context
-    
+    init(){
+        
+    }
     public func getFavorites() -> [FavoriteEntity] {
         let request: NSFetchRequest<FavoriteItem> = FavoriteItem.fetchRequest()
         // بنرتب من الأحدث للأقدم

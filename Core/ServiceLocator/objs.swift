@@ -9,26 +9,61 @@ import Foundation
 import NDS_Networking
 public class objs{
    static let shared = objs()
-   static let repo = HomeRepo(network: AlamofireNetwork())
-   static let usecase = HomeUseCase(homeRepo: repo)
-   static let viewMode = HomeViewModel(homeUseCase: usecase)
-   static let HomeVIewController = HomeVC(viewModel: viewMode )
+    
+    let repo: HomeRepoProtocol
+    let usecase: HomeUseCaseProtocol
+    let viewMode: HomeViewModelType
+    let HomeVIewController: HomeVC
+    
+    private init (){
+        self.repo = HomeRepo(network: AlamofireNetwork())
+        self.usecase = HomeUseCase(homeRepo: self.repo)
+        self.viewMode = HomeViewModel(homeUseCase: self.usecase)
+        self.HomeVIewController = HomeVC(viewModel: self.viewMode)
+    }
     
 }
 public class objsPD{
    static let shared = objsPD()
-   static let repo = ProductDetailsReop(network: AlamofireNetwork())
-    static let usecase = ProductDetailsUsecase(ProductDetailsRepository: repo)
-   static let viewMode = ProductDetailsViewModel(PDUseCase: usecase)
+    
+    let repo: ProductDetailsRepoProtocol
+    let usecase: ProductDetailsUseCaseProtocol
+    let viewMode: ProductDetailsViewModelType
+    
+    private init (){
+        self.repo = ProductDetailsReop(network: AlamofireNetwork())
+        self.usecase = ProductDetailsUsecase(ProductDetailsRepository: self.repo)
+        self.viewMode = ProductDetailsViewModel(PDUseCase: self.usecase)
+    }
+
 
     
 }
 public class objsFav{
     static let shared = objsFav()
-    static let repo = FavoriteRepo()
-    static  let usecase = FavoriteUseCase(repo: repo)
-    static  let viewMode = FavoriteViewModel()
+    
+    let repo: FavoriteRepoProtocol
+    let usecase: FavoriteUseCaseProtocol
+    let viewMode: FavoriteViewModel
+    
+   private init(){
+        self.repo = FavoriteRepo()
+        self.usecase = FavoriteUseCase(repo: self.repo)
+        self.viewMode = FavoriteViewModel()
+    }
 
     
 }
-
+public class objsCart{
+    static let shared = objsCart()
+    
+    let repo: CartRepoProtocol2
+    let usecase: CartUseCase2
+    let viewMode: CartViewModelType
+    
+    private init(){
+        self.repo = CartRepo2()
+        self.usecase = CartUseCase2(repo2:self.repo)
+        self.viewMode = CartViewModel2()
+    }
+}

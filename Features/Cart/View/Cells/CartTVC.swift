@@ -6,11 +6,15 @@
 //
 
 import UIKit
-
-class CartTVC: UITableViewCell {
+import SDWebImage
+class CartTVC: UITableViewCell,IdentifiableView {
     
 //MARK: - IBOutlet
+    @IBOutlet weak var subtotalWord: UILabel!
+    @IBOutlet weak var removeProductWord: UIButton!
     
+    @IBOutlet weak var quantityword: UILabel!
+    @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var quantity: UILabel!
     @IBOutlet weak var price: UILabel!
@@ -24,6 +28,8 @@ class CartTVC: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        setupText()
+        removeProductWord.layer.cornerRadius = 12
         // Initialization code
     }
 
@@ -32,10 +38,22 @@ class CartTVC: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    func configure(ProName: String,ProPrice: Double,ProQuantity: Int){
+    
+    
+    func setupText(){
+        subtotalWord.text = "subtotal".localized
+        quantityword.text = "quantity".localized
+        removeProductWord.setTitle("remove_item".localized, for: .normal)
+        
+    }
+    
+    
+    
+    func configure(ProName: String,ProPrice: Double,ProQuantity: Int, image: String){
         productName.text = ProName
         quantity.text = "\(ProQuantity)"
         price.text = "\(ProPrice)"
+        img.sd_setImage(with: URL(string: image))
         
         
     }

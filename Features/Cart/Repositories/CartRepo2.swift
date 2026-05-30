@@ -20,7 +20,7 @@ public class CartRepo2: CartRepoProtocol2{
     
     private let context = CoreDataManager.shared.context
     
-    // ── Read ──────────────────────────────────────────
+    //  Read 
     public func getCartItems() -> [CartEntity] {
         let request: NSFetchRequest<CartItem> = CartItem.fetchRequest()
         let items = (try? context.fetch(request)) ?? []

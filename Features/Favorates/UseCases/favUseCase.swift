@@ -6,7 +6,18 @@
 //
 
 import Foundation
-class FavoriteUseCase {
+
+protocol FavoriteUseCaseProtocol{
+    func getFavorites() -> [FavoriteEntity]
+    func addFavorite(product: FavoriteEntity)
+    func removeFavorite(productId: Int)
+    func isFavorite(productId: Int) -> Bool
+    
+    func toggleFavorite(product: FavoriteEntity)
+}
+
+
+class FavoriteUseCase: FavoriteUseCaseProtocol {
     private let repo: FavoriteRepoProtocol
     
     init(repo: FavoriteRepoProtocol = FavoriteRepo()) {

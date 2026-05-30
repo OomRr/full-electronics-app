@@ -7,15 +7,33 @@
 
 import UIKit
 import SDWebImage
-class BannerCVC: UICollectionViewCell {
+import SkeletonView
+class BannerCVC: UICollectionViewCell, IdentifiableView {
 
+    @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var bannerImg: UIImageView!
+    
     override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    super.awakeFromNib()
+    setupImg()
+    self.isSkeletonable = true
+    contentView.isSkeletonable = true
+    img.isSkeletonable = true
+    bannerImg.isSkeletonable = true
+        
     }
-
+    func setupImg(){
+        img.layer.cornerRadius = 7
+        img.clipsToBounds = true
+    }
+   
+    
+    
 }
+
+
+
+
 extension BannerCVC{
     func configure(with banner: String){
         

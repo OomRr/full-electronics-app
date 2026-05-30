@@ -31,8 +31,8 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2,456" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78D-8V-av1">
-                                                <rect key="frame" x="215" y="0.0" width="45" height="20.333333333333332"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78D-8V-av1">
+                                                <rect key="frame" x="249.66666666666669" y="0.0" width="10.333333333333314" height="20.333333333333332"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -48,8 +48,8 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ABz-eF-v6O">
-                                                <rect key="frame" x="249.66666666666669" y="0.0" width="10.333333333333314" height="20.333333333333332"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ABz-eF-v6O">
+                                                <rect key="frame" x="225.66666666666666" y="0.0" width="34.333333333333343" height="20.333333333333332"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -65,8 +65,8 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ol3-Th-gSb">
-                                                <rect key="frame" x="249.66666666666669" y="0.0" width="10.333333333333314" height="20.333333333333332"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ol3-Th-gSb">
+                                                <rect key="frame" x="228.66666666666669" y="0.0" width="31.333333333333314" height="20.333333333333332"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -82,8 +82,8 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2,456" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wMW-h6-RAb">
-                                                <rect key="frame" x="208.66666666666666" y="0.0" width="51.333333333333343" height="20.333333333333332"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wMW-h6-RAb">
+                                                <rect key="frame" x="248" y="0.0" width="12" height="20.333333333333332"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -109,13 +109,18 @@
                     <constraint firstAttribute="trailing" secondItem="PFc-9l-qB8" secondAttribute="trailing" constant="20" id="uSA-BI-h2n"/>
                 </constraints>
             </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="estimatedTotal" destination="wMW-h6-RAb" id="Zkf-Kq-sfQ"/>
                 <outlet property="estimatedTotalLabel" destination="uN2-Oo-7oA" id="AzD-3a-4bG"/>
+                <outlet property="shipNum" destination="ABz-eF-v6O" id="A0n-hK-2aC"/>
                 <outlet property="shippingLabel" destination="ymj-Bl-OIE" id="BzD-3a-4bG"/>
                 <outlet property="subtotalLabel" destination="JTJ-r2-H5m" id="CzD-3a-4bG"/>
+                <outlet property="sutotal" destination="78D-8V-av1" id="odJ-80-WqW"/>
                 <outlet property="taxLabel" destination="b2V-X3-NLc" id="DzD-3a-4bG"/>
+                <outlet property="taxNum" destination="Ol3-Th-gSb" id="IRn-Zj-mCU"/>
+                <outlet property="totView" destination="PFc-9l-qB8" id="iMK-Xz-Tjy"/>
             </connections>
-            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <point key="canvasLocation" x="138.93129770992365" y="201.40845070422537"/>
         </tableViewCell>
     </objects>

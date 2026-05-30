@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CatigoriesCVC: UICollectionViewCell {
+class CatigoriesCVC: UICollectionViewCell, IdentifiableView {
 
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var img: UIImageView!

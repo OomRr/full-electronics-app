@@ -6,7 +6,13 @@
 //
 
 import Foundation
-class CartViewModel2 {
+class CartViewModel2: CartViewModelType {
+    
+    
+    var onStateChange: ((CartiewState) -> Void)?
+    
+    var CartEntity: CartEntity?
+    
     private let useCase2 = CartUseCase2()
     
     var cartItems: [CartEntity] = []

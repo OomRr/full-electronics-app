@@ -21,7 +21,6 @@ class HomeViewModel: HomeViewModelType {
         self.onStateChange?(.loadingState)
         homeUseCase.execute {[weak self] result in
             switch result {
-              
             case .success(let ElectronicsModel):
                 self?.homeModel = ElectronicsModel
                 self?.onStateChange?(.successState)

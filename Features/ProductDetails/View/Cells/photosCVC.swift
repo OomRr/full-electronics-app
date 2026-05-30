@@ -6,14 +6,20 @@
 //
 
 import UIKit
-
-class photosCVC: UICollectionViewCell {
+import SDWebImage
+class photosCVC: UICollectionViewCell,IdentifiableView {
 
    // @IBOutlet weak var picHeight: NSLayoutConstraint!
     @IBOutlet weak var pic: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+       
+    }
+    
+    
+    func configure(with imgString: String){
+        pic.sd_setImage(with: URL(string: imgString))
     }
 
 }

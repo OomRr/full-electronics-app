@@ -16,33 +16,46 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eQw-c3-HVS">
-                        <rect key="frame" x="16" y="15.999999999999996" width="288" height="58.666666666666657"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eQw-c3-HVS">
+                        <rect key="frame" x="16" y="16" width="288" height="67"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image-3" translatesAutoresizingMaskIntoConstraints="NO" id="OlG-at-Xh9">
-                                <rect key="frame" x="0.0" y="0.0" width="60" height="58.666666666666664"/>
+                                <rect key="frame" x="0.0" y="3.6666666666666714" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="9SI-aS-agy"/>
                                     <constraint firstAttribute="height" constant="60" id="DBT-3q-KmS"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="2Vj-I8-vUq">
-                                <rect key="frame" x="70" y="0.0" width="218" height="58.666666666666664"/>
+                                <rect key="frame" x="70" y="4.3333333333333321" width="168" height="58.666666666666671"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aBL-Nb-AuF">
-                                        <rect key="frame" x="0.0" y="0.0" width="218" height="20.333333333333332"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aBL-Nb-AuF">
+                                        <rect key="frame" x="0.0" y="0.0" width="168" height="20.333333333333332"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1400" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XEj-Hl-GTi">
-                                        <rect key="frame" x="0.0" y="38.333333333333336" width="218" height="20.333333333333336"/>
+                                        <rect key="frame" x="0.0" y="38.333333333333329" width="168" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qXT-tu-SxP">
+                                <rect key="frame" x="248" y="13.666666666666671" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="2hb-Ra-5dk"/>
+                                    <constraint firstAttribute="width" constant="40" id="BOT-TM-THl"/>
+                                </constraints>
+                                <color key="tintColor" red="0.6583203125" green="0.2101660907" blue="0.1979577334" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="trash.fill" catalog="system" title=""/>
+                                <connections>
+                                    <action selector="deletBtnTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="1cE-nB-Zj0"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </stackView>
                 </subviews>
@@ -55,6 +68,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="deleteBtn" destination="qXT-tu-SxP" id="KN8-De-JK0"/>
                 <outlet property="img" destination="OlG-at-Xh9" id="i1C-eZ-MXY"/>
                 <outlet property="name" destination="aBL-Nb-AuF" id="t0v-vH-n8p"/>
                 <outlet property="price" destination="XEj-Hl-GTi" id="pYr-UG-G42"/>
@@ -64,5 +78,6 @@
     </objects>
     <resources>
         <image name="Image-3" width="53" height="53"/>
+        <image name="trash.fill" catalog="system" width="117" height="128"/>
     </resources>
 </document>
