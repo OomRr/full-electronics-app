@@ -37,6 +37,10 @@ class ProductsCVC: UICollectionViewCell, IdentifiableView {
     func configure(homeModel: ElectronicsModelElement){
         self.price.text = "\(homeModel.price ?? 0) EGP"
         self.productName.text = homeModel.title
-        productImg.sd_setImage(with: URL(string: homeModel.images?[0] ?? ""))
+        if let imgString = homeModel.images?.first, let url = URL(string: imgString) {
+            productImg.sd_setImage(with: url, placeholderImage: UIImage(named: "img"))
+        } else {
+            productImg.image = UIImage(named: "img")
+        }
     }
 }

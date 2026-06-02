@@ -11,6 +11,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CartVC" customModule="Full_elcetronics_store" customModuleProvider="target">
             <connections>
                 <outlet property="CartTableView" destination="c4u-jt-bw9" id="TIP-0u-IJQ"/>
+                <outlet property="buyBtn" destination="CS8-ic-7IT" id="Vj6-2p-fjD"/>
+                <outlet property="totalName" destination="B9f-Cc-fPG" id="aTL-l2-b3m"/>
                 <outlet property="totalPriceLabel" destination="mUl-30-Ysw" id="XoM-uW-iYr"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

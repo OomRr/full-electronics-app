@@ -59,7 +59,7 @@ class ProductDetailsVC2: UIViewController {
     
     //MARK: - inits
     
-    init(id: Int, viewModel: ProductDetailsViewModel, cartVM: CartViewModel2, favViewModel: FavoriteViewModel = objsFav.shared.viewMode) {
+    init(id: Int, viewModel: ProductDetailsViewModel, cartVM: CartViewModel2, favViewModel: FavoriteViewModel = ObjsFav.shared.viewMode) {
         self.viewModel = viewModel
         self.FavViewModel = favViewModel
         self.productId = id
@@ -111,14 +111,20 @@ class ProductDetailsVC2: UIViewController {
     
     
     func configure(){
-       // var y =  viewModel.PDModel?[0].title
-        img.sd_setImage(with: URL(string: viewModel.PDModel?.images?[0] ?? ""))
+        var im =  viewModel.PDModel?.images?[0]
+        if im == nil{
+            img.image = UIImage(named: "noImage")
+        }else{
+            img.sd_setImage(with: URL(string: im!),placeholderImage: UIImage(named: "img"))
+
+        }
+        
         titlee.text = viewModel.PDModel?.title
         price.text = "\(viewModel.PDModel?.price ?? 0) EGP"
         
     }
     func updateFavIcon() {
-        let state = objsFav.shared.viewMode.isFavorite(productId: productId)
+        let state = ObjsFav.shared.viewMode.isFavorite(productId: productId)
         
         
         let icon = state ? "heart.fill" : "heart"
@@ -149,10 +155,10 @@ class ProductDetailsVC2: UIViewController {
             
         )
         
-        objsFav.shared.viewMode.toggleFavorite(product: proIntity)
+        ObjsFav.shared.viewMode.toggleFavorite(product: proIntity)
         
         updateFavIcon()
-        let state = objsFav.shared.viewMode.isFavorite(productId: productId)
+        let state = ObjsFav.shared.viewMode.isFavorite(productId: productId)
         switch state {
             case true:
             Toast.showToast(message: "added_to_favorites".localized, in: self)
@@ -181,6 +187,15 @@ extension ProductDetailsVC2: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell: RatingTVC = RAndRtableView.dequeueReusableCell(for: indexPath)
+            cell.imgToShow = { [weak self] imgs, selectedimg in
+                guard let self = self else { return }
+                let fullscreenVC = FullscreenImageVC(imageUrls: imgs, startIndex: selectedimg)
+                fullscreenVC.modalPresentationStyle = .fullScreen
+                fullscreenVC.modalTransitionStyle = .crossDissolve
+               // self.navigationController?.pushViewController(fullscreenVC, animated: true)
+                self.present(fullscreenVC, animated: true)
+            }
+           
             cell.configure(with: viewModel.PDModel?.images ?? [])
             return cell
         } else if indexPath.row == 1 {

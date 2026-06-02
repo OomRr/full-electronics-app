@@ -13,19 +13,19 @@ class FavoratesVC: UIViewController {
     var favsModeld: [FavoriteEntity] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Favorites".localized
+        title = "favorites".localized
         setupTableView()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        objsFav.shared.viewMode.loadFavorites()
-        favsModeld = objsFav.shared.viewMode.favorites
+        ObjsFav.shared.viewMode.loadFavorites()
+        favsModeld = ObjsFav.shared.viewMode.favorites
         favTableView.reloadData()
     }
     
     func setupTableView(){
-        objsFav.shared.viewMode.loadFavorites()
+        ObjsFav.shared.viewMode.loadFavorites()
         favTableView.register(FavoratesTVC.self)
         favTableView.delegate = self
         favTableView.dataSource = self
@@ -44,7 +44,7 @@ extension FavoratesVC: UITableViewDelegate, UITableViewDataSource {
      
         cell.configure(name: fav.productName, price: fav.price, img: fav.productImage)
         cell.onRemove = { [weak self] in
-            var vm = objsFav.shared.viewMode
+            var vm = ObjsFav.shared.viewMode
             
             vm.removeFavorite(productId: fav.productId)
             vm.loadFavorites()

@@ -1,4 +1,3 @@
-//
 //  objs.swift
 //  Full elcetronics store
 //
@@ -7,8 +6,10 @@
 
 import Foundation
 import NDS_Networking
-public class objs{
-   static let shared = objs()
+public class ObjsHome{
+    
+   static let shared = ObjsHome()
+    
     
     let repo: HomeRepoProtocol
     let usecase: HomeUseCaseProtocol
@@ -23,8 +24,8 @@ public class objs{
     }
     
 }
-public class objsPD{
-   static let shared = objsPD()
+public class ObjsProductDetails{
+   static let shared = ObjsProductDetails()
     
     let repo: ProductDetailsRepoProtocol
     let usecase: ProductDetailsUseCaseProtocol
@@ -37,10 +38,9 @@ public class objsPD{
     }
 
 
-    
 }
-public class objsFav{
-    static let shared = objsFav()
+public class ObjsFav{
+    static let shared = ObjsFav()
     
     let repo: FavoriteRepoProtocol
     let usecase: FavoriteUseCaseProtocol
@@ -54,8 +54,8 @@ public class objsFav{
 
     
 }
-public class objsCart{
-    static let shared = objsCart()
+public class ObjsCart{
+    static let shared = ObjsCart()
     
     let repo: CartRepoProtocol2
     let usecase: CartUseCase2

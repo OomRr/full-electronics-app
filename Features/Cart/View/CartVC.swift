@@ -8,7 +8,8 @@ import UIKit
 
 class CartVC: UIViewController {
 
-   // let cartViewModel: CartViewModel? = nil
+    @IBOutlet weak var buyBtn: UIButton!
+    @IBOutlet weak var totalName: UILabel!
     var cartViewModel2: CartViewModel2
     
     @IBOutlet weak var totalPriceLabel: UILabel!
@@ -31,8 +32,6 @@ class CartVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setuptable()
-        //cartViewModel.getCartData(userId: 44)
-        
         cartViewModel2.loadCart()
         calcTotalPrice()
         totalPriceLabel.text = "\(totalPrice) EGP"
@@ -41,14 +40,15 @@ class CartVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setuptable()
-        //cartViewModel.getCartData(userId: 44)
-        
         cartViewModel2.loadCart()
         calcTotalPrice()
         totalPriceLabel.text = "\(totalPrice) EGP"
-        
+        setuplang()
     }
-    
+    func setuplang(){
+        totalName.text = "total".localized
+        buyBtn.setTitle("buy_now".localized, for: .normal)
+    }
   public func calcTotalPrice(){
       totalPrice = 0
         for i in cartViewModel2.cartItems{

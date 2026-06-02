@@ -19,7 +19,7 @@ class TabBarViewController: UITabBarController {
     }
     func setupTabBarItems() {
         //حطيت كل UIViewController جوا UINavigationController واديته قيم لل tabBar image and title
-        let vc1 = UINavigationController(rootViewController: HomeVC(viewModel: objs.shared.viewMode))
+        let vc1 = UINavigationController(rootViewController: HomeVC(viewModel: ObjsHome.shared.viewMode))
         let vc2 = UINavigationController(rootViewController: CatigoriesVC())
         let vc3 = UINavigationController(rootViewController: SettingsVC())
         let vc4 = UINavigationController(rootViewController: FavoratesVC())
@@ -27,13 +27,13 @@ class TabBarViewController: UITabBarController {
       
         
         vc1.tabBarItem.image = UIImage(systemName: "house.fill")
-        vc1.tabBarItem.title = "Home"
+        vc1.tabBarItem.title = "home".localized
         vc2.tabBarItem.image = UIImage(systemName: "circle.grid.2x2")
-        vc2.tabBarItem.title = "Catigories"
+        vc2.tabBarItem.title = "categories".localized
         vc3.tabBarItem.image = UIImage(systemName: "gear")
-        vc3.tabBarItem.title = "Settings"
+        vc3.tabBarItem.title = "settings".localized
         vc4.tabBarItem.image = UIImage(systemName: "heart.fill")
-        vc4.tabBarItem.title = "Favorites"
+        vc4.tabBarItem.title = "favorites".localized
         
         //هنا ببعت باه ال UINavigationControllers لل MainTabBarViewController بتاعي عادي
         //ال setViewControllers دي تبع UITabBarController

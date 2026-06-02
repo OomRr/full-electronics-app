@@ -15,6 +15,7 @@ class RatingTVC: UITableViewCell, IdentifiableView {
     
     var imgsStrings: [String] = []
     
+    var imgToShow: (([String],Int) -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,8 +32,7 @@ class RatingTVC: UITableViewCell, IdentifiableView {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        
     }
     
     func setupText() {
@@ -58,5 +58,10 @@ extension RatingTVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
         let cell: photosCVC = ratingCollectionView.dequeueReusableCell(for: indexPath)
         cell.configure(with: imgsStrings[indexPath.row])
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+     //   let img = imgsStrings[indexPath.row]
+        imgToShow?(imgsStrings,indexPath.row)
     }
 }
