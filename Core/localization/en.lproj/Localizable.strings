@@ -27,6 +27,8 @@
 "subtotal" = "Subtotal";
 "quantity" = "quantity";
 "remove_item" = "Remove Item";
+"buy_now" = "Buy Now";
+"total" = "Total";
 
 
 
@@ -113,3 +115,8 @@
 "item_added_to_cart" = "Added To Cart Successfully!";
 "added_to_favorites" = "Added To Favorites!";
 "removed_from_favorites" = "Removed From Favorites!";
+"favorites" = "Favorites";
+"settings" = "settings";
+"categories" = "Categories";
+"home" = "Home";
+"switch_language" = "switch language";

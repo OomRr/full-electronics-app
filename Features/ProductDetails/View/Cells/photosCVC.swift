@@ -19,7 +19,12 @@ class photosCVC: UICollectionViewCell,IdentifiableView {
     
     
     func configure(with imgString: String){
-        pic.sd_setImage(with: URL(string: imgString))
+        if imgString == "" {
+            pic.image = UIImage(named: "noImage")
+        }else{
+            pic.sd_setImage(with: URL(string: imgString),placeholderImage: UIImage(named: "img"))
+        }
+
     }
 
 }

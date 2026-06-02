@@ -63,9 +63,11 @@ class CatigoriesVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "categories".localized
         currentSubcategories = categories.first?.subcategories ?? []
         setupTableView()
         setupCollectionView()
+        
     }
 
 }

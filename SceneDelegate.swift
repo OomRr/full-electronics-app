@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
         let repo = HomeRepo(network: AlamofireNetwork())
         let useCase = HomeUseCase(homeRepo: repo)
-        let viewModel = HomeViewModel(homeUseCase: useCase)
+       // let viewModel = HomeViewModel(homeUseCase: useCase)
         let onBoardingViewModel = OnBoardingViewModel()
       //  let VC = TabBarViewController()
         let VC = OnBoardingVC(viewModel: onBoardingViewModel)

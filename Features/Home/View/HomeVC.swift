@@ -22,7 +22,7 @@ class HomeVC: UIViewController {
     //MARK: - Properties
     private var sideMenu: SideMenuNavigationController!
     var viewModel: HomeViewModelType
-    var cartViewModel2: CartViewModel2 = objsCart.shared.viewMode as! CartViewModel2
+    var cartViewModel2: CartViewModel2 = ObjsCart.shared.viewMode as! CartViewModel2
     var filteredProducts: ElectronicsModel = []
     var isSearching: Bool { return !(searchTF.text?.isEmpty ?? true) }
     
@@ -150,7 +150,7 @@ class HomeVC: UIViewController {
     }
     
     @IBAction func cartIconTapped(_ sender: Any) {
-        self.navigationController?.pushViewController(CartVC(cartViewModel2: objsCart.shared.viewMode ), animated: true)
+        self.navigationController?.pushViewController(CartVC(cartViewModel2: ObjsCart.shared.viewMode ), animated: true)
     }
 }
 
@@ -223,7 +223,7 @@ extension HomeVC: UITableViewDataSource {
             cell.onProductSelected = { [weak self] selectedId in
                 self?.navigationController?.pushViewController(
                     ProductDetailsVC2(id: selectedId,
-                                      viewModel: objsPD.shared.viewMode as! ProductDetailsViewModel,
+                                      viewModel: ObjsProductDetails.shared.viewMode as! ProductDetailsViewModel,
                                       cartVM: CartViewModel2()), animated: true)
             }
             return cell
@@ -234,7 +234,7 @@ extension HomeVC: UITableViewDataSource {
             cell.onProductSelected = { [weak self] selectedId in
                 self?.navigationController?.pushViewController(
                     ProductDetailsVC2(id: selectedId,
-                                      viewModel: objsPD.shared.viewMode as! ProductDetailsViewModel,
+                                      viewModel: ObjsProductDetails.shared.viewMode as! ProductDetailsViewModel,
                                       cartVM: CartViewModel2()), animated: true)
             }
             return cell
@@ -258,7 +258,7 @@ extension HomeVC: UITableViewDelegate {
             searchTF.resignFirstResponder()
             navigationController?.pushViewController(
                 ProductDetailsVC2(id: selectedId,
-                                  viewModel: objsPD.shared.viewMode as! ProductDetailsViewModel,
+                                  viewModel: ObjsProductDetails.shared.viewMode as! ProductDetailsViewModel,
                                   cartVM: CartViewModel2()), animated: true)
         }
     }
