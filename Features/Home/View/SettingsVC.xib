@@ -10,7 +10,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsVC" customModule="Full_elcetronics_store" customModuleProvider="target">
             <connections>
+                <outlet property="darkModeLabel" destination="wYz-AW-54b" id="TQ0-oZ-Tr6"/>
                 <outlet property="switchBtn" destination="vmK-CL-T5k" id="wgA-hh-gQ3"/>
+                <outlet property="toggleSwitch" destination="8ca-Id-hMh" id="Qkr-u3-Ize"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,28 +21,53 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vmK-CL-T5k">
-                    <rect key="frame" x="15" y="118" width="363" height="40"/>
-                    <color key="backgroundColor" systemColor="systemOrangeColor"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="40" id="yWt-GZ-a7a"/>
-                    </constraints>
-                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" image="globe" catalog="system" title="switch language"/>
-                    <connections>
-                        <action selector="changeLanguage:" destination="-1" eventType="touchUpInside" id="gOH-ON-N9k"/>
-                    </connections>
-                </button>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="59" translatesAutoresizingMaskIntoConstraints="NO" id="OMp-40-Cg6">
+                    <rect key="frame" x="16" y="118" width="361" height="127"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vmK-CL-T5k">
+                            <rect key="frame" x="0.0" y="0.0" width="361" height="40"/>
+                            <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="yWt-GZ-a7a"/>
+                            </constraints>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="globe" catalog="system" title="switch language"/>
+                            <connections>
+                                <action selector="changeLanguage:" destination="-1" eventType="touchUpInside" id="gOH-ON-N9k"/>
+                            </connections>
+                        </button>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="R5o-R7-Xpc">
+                            <rect key="frame" x="0.0" y="99" width="361" height="28"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dark Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wYz-AW-54b">
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="28"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="100" id="rMq-b3-XUR"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8ca-Id-hMh">
+                                    <rect key="frame" x="300" y="0.0" width="63" height="28"/>
+                                    <connections>
+                                        <action selector="toggleTapped:" destination="-1" eventType="valueChanged" id="8Ug-nD-eNc"/>
+                                    </connections>
+                                </switch>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="vmK-CL-T5k" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="2hB-Wu-ikC"/>
-                <constraint firstItem="vmK-CL-T5k" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="NbK-F1-2r9"/>
-                <constraint firstAttribute="trailing" secondItem="vmK-CL-T5k" secondAttribute="trailing" constant="15" id="umT-6O-94f"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="OMp-40-Cg6" secondAttribute="trailing" constant="16" id="BdD-36-O8F"/>
+                <constraint firstItem="OMp-40-Cg6" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="aS0-ke-dUa"/>
+                <constraint firstItem="OMp-40-Cg6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="ekB-dM-82U"/>
             </constraints>
-            <point key="canvasLocation" x="-182" y="73"/>
+            <point key="canvasLocation" x="-182.44274809160305" y="72.535211267605632"/>
         </view>
     </objects>
     <resources>

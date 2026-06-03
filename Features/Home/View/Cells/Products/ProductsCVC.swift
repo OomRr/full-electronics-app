@@ -24,9 +24,12 @@ class ProductsCVC: UICollectionViewCell, IdentifiableView {
         self.clipsToBounds = true
         self.contentView.clipsToBounds = true
         self.layer.cornerRadius = 8
-        self.layer.borderWidth = 0.2
+        self.layer.borderWidth = 0.3
+        self.layer.borderColor = CGColor(gray: 0.5, alpha: 1)
+       // self.setBorderColor("PrimaryTextColor")
         setupText()
         rateView.layer.cornerRadius = 8
+       // updateBorderColor()
     }
     
     func setupText() {
@@ -43,4 +46,19 @@ class ProductsCVC: UICollectionViewCell, IdentifiableView {
             productImg.image = UIImage(named: "img")
         }
     }
+//    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+//        super.traitCollectionDidChange(previousTraitCollection)
+//        
+//        if traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) {
+//            updateBorderColor()
+//        }
+//    }
+//    
+//    private func updateBorderColor() {
+//        // resolvedColor converts UIColor → CGColor for the CURRENT trait collection
+//        layer.borderColor = UIColor(named: "CardBorder")?
+//            .resolvedColor(with: traitCollection)
+//            .cgColor
+//    }
 }
+

@@ -16,9 +16,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
    
         guard let _ = (scene as? UIWindowScene) else { return }
+        
         guard let windowScene = (scene as? UIWindowScene) else { return }
+        
         let window = UIWindow(windowScene: windowScene)
-    
+        ThemeManager.shared.applyOnLaunch(to: window)
         let repo = HomeRepo(network: AlamofireNetwork())
         let useCase = HomeUseCase(homeRepo: repo)
        // let viewModel = HomeViewModel(homeUseCase: useCase)
@@ -34,7 +36,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let NC = UINavigationController(rootViewController: VC)
         window.rootViewController = NC
         self.window = window
-        self.window?.overrideUserInterfaceStyle = .light
         window.makeKeyAndVisible()
     }
 

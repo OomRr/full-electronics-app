@@ -24,7 +24,7 @@ class CatigoriesTVC: UITableViewCell, IdentifiableView {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         contentView.backgroundColor = selected ? UIColor.orange.withAlphaComponent(0.1) : .clear
-        catName.textColor = selected ? .orange : .black
+      //  catName.textColor = selected ? .orange : .black
         // لون الـ icon يتغير مع الـ selection
         catImg.tintColor = selected ? .orange : .gray
     }
