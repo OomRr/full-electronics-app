@@ -28,7 +28,7 @@ class TabBarViewController: UITabBarController {
         
         vc1.tabBarItem.image = UIImage(systemName: "house.fill")
         vc1.tabBarItem.title = "home".localized
-        vc2.tabBarItem.image = UIImage(systemName: "circle.grid.2x2")
+        vc2.tabBarItem.image = UIImage(systemName: "circle.grid.2x2.fill")
         vc2.tabBarItem.title = "categories".localized
         vc3.tabBarItem.image = UIImage(systemName: "gear")
         vc3.tabBarItem.title = "settings".localized
