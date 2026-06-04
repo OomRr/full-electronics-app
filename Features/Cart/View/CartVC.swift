@@ -44,6 +44,7 @@ class CartVC: UIViewController {
         calcTotalPrice()
         totalPriceLabel.text = "\(totalPrice) EGP"
         setuplang()
+        refreshTotal()
     }
     func setuplang(){
         totalName.text = "total".localized
